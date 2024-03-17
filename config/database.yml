@@ -1,0 +1,18 @@
+# PostgreSQL
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: todo_list_development
+  pool: 5
+  username: dylan
+  password:
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: todo_list_test
+  pool: 5
+  username: dylan
+  password:
+  timeout: 5000

@@ -1,0 +1,6 @@
+<div id="<%= dom_id(task) %>" class="task">
+    <p><strong>Task:</strong> <%= task.name %></p>
+    <% if task.due_date %>
+        <p>Due: <%= task.due_date %></p>
+    <% end %>
+</div>

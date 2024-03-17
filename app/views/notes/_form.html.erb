@@ -1,0 +1,5 @@
+<%= bootstrap_form_for([@task,@note]) do |f| %>
+  <%= f.text_field :title, placeholder: "Title", hide_label: true %>
+  <%= f.text_area :body, placeholder: "Body", hide_label: true %>
+  <%= f.primary @note.persisted? ? "Update Note" : "Create Note" %>
+<% end %>

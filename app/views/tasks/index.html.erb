@@ -1,0 +1,20 @@
+<div class="container mt-2">
+
+    <h1>Tasks</h1>
+
+    <div class="row row-cols-1 row-cols-md-2 g-3">
+        <% @tasks.each do |task| %>
+        <div class="col border border-dark-subtle pt-3 pb-3">
+            <%= render task %> <!-- Will auto look for a task partial -->
+            <%= link_to "Notes", task_notes_path(task), class: "btn btn-primary btn-sm mb-1" %> <!-- URL: /tasks/{id}/notes -->
+            <%= link_to "Edit", edit_task_path(task), class: "btn btn-secondary btn-sm mb-1" %>
+            <%= button_to "Delete", task, method: :delete, class: "btn btn-danger btn-sm mb-1", form: {class: "d-inline", data: {turbo_confirm: "Are you sure you want to remove this task?"}} %>
+        </div>
+        <% end %>
+    </div>
+
+    <p>
+        <%= link_to "New Task", new_task_path, class: "btn btn-primary mt-3" %>
+    </p>
+    
+</div>

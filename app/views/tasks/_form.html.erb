@@ -1,0 +1,5 @@
+<%= bootstrap_form_for(@task) do |f| %>
+  <%= f.text_field :name, placeholder: "Name", hide_label: true %>
+  <%= f.datetime_field :due_date %>
+  <%= f.primary @task.persisted? ? "Update Task" : "Create Task" %>
+<% end %>

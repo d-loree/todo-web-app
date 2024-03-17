@@ -1,0 +1,8 @@
+<h1>Sign Up</h1>
+<%= bootstrap_form_for(@user) do |f| %>
+  <%= f.text_field :name, placeholder: "Name", hide_label: true %>
+  <%= f.email_field :email, placeholder: "Email", hide_label: true %>
+  <%= f.password_field :password, placeholder: "Password", hide_label: true %>
+  <%= f.password_field :password_confirmation, label: "Confirm Password", placeholder: "Confirm Password", hide_label: true %>
+  <%= f.primary "Sign Up" %>
+<% end %>

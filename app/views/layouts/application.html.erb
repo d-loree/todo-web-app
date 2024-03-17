@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+  <!-- BEGIN NAVBAR -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand ps-4" href="/">Todo List</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto ms-4">
+            <%= nav_link "Home", root_path %>
+            <% if current_user %>
+              <%= nav_link "Tasks", tasks_path %>
+            <% end %>
+          </ul>
+          <ul class="navbar-nav ms-auto me-4">
+            <% if current_user %>
+              <%= nav_link "Logout", logout_path %>
+            <% else %>
+              <%= nav_link "Login", login_path %>
+              <%= nav_link "Sign Up", signup_path %>
+            <% end %>
+
+          </ul>
+        </div>
+      </nav>
+    <!-- END NAVBAR -->
+
+
+    <div class="container-fluid text-center d-flex flex-column align-items-center justify-content-center mt-4">
+      <!-- BEGIN FLASH MESSAGE -->
+      <div id="flash-messages" class="w-75">
+        <% flash.each do |name, msg| %>
+          <div class="alert <%= name == 'alert' ? 'alert-danger' : 'alert-primary' %> alert-dismissible fade show" role="alert">
+            <strong><%= msg %></strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% end %>
+      </div>
+      <!-- END FLASH MESSAGE -->
+      <div class="border border-2 rounded-3 border-dark-subtle p-5 bg-body-secondary" style="--bs-bg-opacity: .2;">
+        <%= yield %>
+      </div>
+    </div>
+
+
+  </body>
+</html>

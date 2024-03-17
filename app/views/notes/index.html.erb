@@ -1,0 +1,15 @@
+<h1>Notes for <%= @task.name %> </h1>
+
+<div class="row row-cols-1 row-cols-md-2 g-3">
+    <% @task.notes.each do |note| %>
+    <div class="col border border-dark-subtle pt-3 pb-3">
+        <%= render note %>
+        <%= link_to "Edit", edit_task_note_path(@task,note), class: "btn btn-primary btn-sm mb-1" %>
+        <%= button_to "Delete", [@task, note], method: :delete, class: "btn btn-danger btn-sm mb-1", form: {class: "d-inline", data: {turbo_confirm: "Are you sure you want to remove this note?"}} %>
+    </div>
+    <% end %>
+</div>
+
+<%= link_to "Add Note", new_task_note_path(@task), class: "btn btn-primary mt-3" %>
+<%= link_to "Back to Tasks", tasks_path, class: "btn btn-primary mt-3" %>
+

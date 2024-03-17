@@ -1,0 +1,7 @@
+<h1>Note for <%= @task.name %> </h1>
+
+<%= render @note %>
+
+<%= link_to "Edit", edit_task_note_path(@task,@note), class: "btn btn-primary" %>
+<%= link_to "All Notes", task_notes_path(@task), class: "btn btn-primary" %>
+<%= button_to "Delete", [@task, @note], method: :delete, class: "btn btn-secondary", form: {data: {turbo_confirm: "Are you sure you want to remove this note?"}} %>

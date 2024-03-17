@@ -1,0 +1,7 @@
+<h1>Login</h1>
+
+<%= bootstrap_form_with(url: sessions_path, method: :post) do |f| %>
+  <%= f.email_field :email, placeholder: "Email", hide_label: true %>
+  <%= f.password_field :password, placeholder: "Password", hide_label: true %>
+  <%= f.primary 'Login' %>
+<% end %>
