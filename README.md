@@ -1,5 +1,8 @@
 # Todo List Web Application
 
+## Live View
+Check it out on your web browser: [Todo Web Application](https://todo.dylanloree.ca/)github flo
+
 ## Introduction
 The Todo List Web Application is a Ruby on Rails project designed to help users manage their tasks efficiently. Users can create tasks and add detailed notes to each task. This project was developed as a learning exercise to gain a deeper understanding of Ruby on Rails and the Model-View-Controller framework. I created this web app while learning from documentation and YouTube tutorials.
 
